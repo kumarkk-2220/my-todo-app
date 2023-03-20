@@ -1,10 +1,5 @@
 import streamlit as st
 import functions
-import os
-
-if not os.path.exists("todos.ext"):
-    with open("todos.txt", 'w') as file:
-        pass
 
 todos = functions.get_todos()
 
@@ -30,3 +25,5 @@ for index, todo in enumerate(todos):
 
 
 st.text_input(label="Enter a ToDo", placeholder="Add a new todo...", on_change=add_todo, key='new_todo')
+
+st.session_state
